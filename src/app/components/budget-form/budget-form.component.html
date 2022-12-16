@@ -1,0 +1,27 @@
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Presupuesto
+      </mat-panel-title>
+      <mat-panel-description>
+        Clic para definir su presupuesto.
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Presupuesto</mat-label>
+        <span matPrefix>$ &nbsp;</span>
+        <input type="number" matInput placeholder="1.000.000">        
+      </mat-form-field>
+
+      <div class="example-button-row">
+        <button mat-fab extended color="primary">
+          <mat-icon>money</mat-icon>
+          Guardar
+        </button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>
+
