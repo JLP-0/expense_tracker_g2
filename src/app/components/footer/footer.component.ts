@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BudgetService } from 'src/app/services/budget.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+abc: any;
+
+  constructor(
+    public service: BudgetService
+  ) {}
 
 }

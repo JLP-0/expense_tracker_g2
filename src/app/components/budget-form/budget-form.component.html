@@ -12,11 +12,11 @@
       <mat-form-field class="example-full-width">
         <mat-label>Presupuesto</mat-label>
         <span matPrefix>$ &nbsp;</span>
-        <input type="number" matInput placeholder="1.000.000">        
+        <input type="number" matInput placeholder="1.000.000" #budget>
       </mat-form-field>
 
       <div class="example-button-row">
-        <button mat-fab extended color="primary">
+        <button mat-fab extended color="primary" (click)="getVal(budget.value)">
           <mat-icon>money</mat-icon>
           Guardar
         </button>
