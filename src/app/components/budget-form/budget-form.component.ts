@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
-import { BudgetService } from 'src/app/services/budget.service';
+import { Component, OnInit} from '@angular/core';
+import { Store } from "@ngrx/store";
+import { AppState } from 'src/app/app.state';
+import { Arithmetic } from 'src/app/models/arithmetic';
+import * as ArithmeticActions from 'src/app/actions/arithmetic.actions'
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-budget-form',
   templateUrl: './budget-form.component.html',
   styleUrls: ['./budget-form.component.css']
 })
-export class BudgetFormComponent {
+export class BudgetFormComponent implements OnInit {
   constructor(
-    private service: BudgetService
+    private store: Store<AppState>
   ) {}
+
+  ngOnInit() {
+  }
 
   panelOpenState = false;
 
-  setVal(inputBudget: any){
-   console.log(  this.service.budget = inputBudget);
+  public addArithmetic(budget: number, total_expenses: number, balance: number){
+    this.store.dispatch({type: ArithmeticActions.ADD_ARITHMETIC, payload:{budget: budget, total_expenses: total_expenses, balance: balance}});
   }
-  
 
 }

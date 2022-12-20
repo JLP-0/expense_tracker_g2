@@ -20,6 +20,7 @@ import { RecordListComponent } from './components/record-list/record-list.compon
 import {MatTableModule} from '@angular/material/table';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/record.reducer';
+import { arithmeticReducer } from './reducers/arithmetic.reducer';
 import { reduce } from 'rxjs';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { reduce } from 'rxjs';
     ]),
     BrowserModule,
     StoreModule.forRoot({records: reducer}),
+    StoreModule.forRoot({arithmetics: reducer}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -49,7 +51,7 @@ import { reduce } from 'rxjs';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BudgetService } from 'src/app/services/budget.service';
 import { Record } from 'src/app/models/record';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.state';
-import { OnInit } from '@angular/core';
+import { Arithmetic } from 'src/app/models/arithmetic';
 
 @Component({
   selector: 'app-footer',
@@ -13,12 +13,14 @@ import { OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   public records: Observable<Record[]>
-  
+  public arithmetics!: Observable<Arithmetic[]>;
+
   constructor(
     private store: Store<AppState>
 
   ){
     this.records = store.select("records");
+    this.arithmetics = store.select("arithmetics");
   }
   ngOnInit(): void {
 

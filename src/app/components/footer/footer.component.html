@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>Presupuesto:</span>
       <span class="example-spacer"></span>
@@ -19,4 +19,18 @@
       <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> local_atm</mat-icon>
       <p> aqui se mostraria</p>
     </mat-toolbar-row>
-  </mat-toolbar>
+  </mat-toolbar> -->
+  <div *ngIf="arithmetics">
+    <table>
+      <tr>
+        <th>Budget</th>
+        <th>Total Expenses</th>
+        <th>Balance</th>
+      </tr>
+      <tr *ngFor="let link of arithmetics | async">
+        <td>{{ link.budget }}</td>
+        <td>{{ link.total_expenses }}</td>
+        <td>{{ link.balance }}</td>
+      </tr>
+    </table>
+  </div>
