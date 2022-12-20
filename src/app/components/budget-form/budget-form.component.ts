@@ -13,8 +13,9 @@ export class BudgetFormComponent {
 
   panelOpenState = false;
 
-  getVal(inputBudget: any){
-    this.service.budget = inputBudget;
+  setVal(inputBudget: any){
+   console.log(  this.service.budget = inputBudget);
   }
+  
 
 }

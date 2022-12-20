@@ -7,4 +7,11 @@ export class BudgetService {
 
   public budget!: any;
   constructor() { }
+
+  getBudget(){
+ 
+    return 4554456546;
+  }
+
+
 }

@@ -18,6 +18,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { NewRecordComponent } from './components/new-record/new-record.component';
 import { RecordListComponent } from './components/record-list/record-list.component';
 import {MatTableModule} from '@angular/material/table';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers/record.reducer';
+import { reduce } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import {MatTableModule} from '@angular/material/table';
       {path: '', component: BudgetFormComponent},
     ]),
     BrowserModule,
+    StoreModule.forRoot({records: reducer}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -44,7 +48,8 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

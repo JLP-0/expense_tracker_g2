@@ -1,25 +1,9 @@
-<form class="example-form">  
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Nombre</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Categoria</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Monto</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-    </tr></table> 
-    
-    <div class="example-button-row">
-        <button mat-fab extended color="primary">          
-          Guardar
-        </button>
-    </div>
-  </form>
+<div>
+  <input type="text" placeholder="Name" #name>
+  <input type="text" placeholder="Category" #category>
+  <input type="number" placeholder="1.000.000" #amount>
+  <button (click)="addRecord(name.value, category.value ,amount.value)">Add a Link</button>
+</div>
 
   <app-record-list></app-record-list>
   
