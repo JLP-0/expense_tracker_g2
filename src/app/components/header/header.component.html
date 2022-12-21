@@ -16,5 +16,16 @@
       </button>
     </div>
 
+    
+    <div class="example-button-container">
+      <button *ngIf="is_user_logged_in()" routerLink="/entrada" class="item" routerLink="/entrada" mat-fab
+        color="primary" aria-label="Add record">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+
+
+
+
   </mat-toolbar-row>
 </mat-toolbar>

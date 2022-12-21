@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "expensetracker-f50ea": {
+      "hosting": {
+        "expense_tracker_g2": [
+          "expensetracker-f50ea"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "expensetracker-f50ea"
+  }
+}

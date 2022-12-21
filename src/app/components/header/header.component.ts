@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private userService: UserService) {}
+
+  is_user_logged_in() {
+    return this.userService.is_user_logged_in();
+  }
 
   
 

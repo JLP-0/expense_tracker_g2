@@ -1,0 +1,40 @@
+<div class="body_content">
+  <div class="content" [ngStyle]="{'margin-top': '10%',   'margin-bottom': 'justify' }">
+    <div>
+      <h2 class="ui teal header">Entra a tu cuenta</h2>
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="ui middle form">
+        <div class="ui stacked segment">
+
+          <div class="field">
+            <label class="form-label">Correo electrónico</label> <br>
+            <input type="text" formControlName="email" />
+          </div><br>
+
+          <div class="field">
+            <label class="form-label">Contraseña</label> <br>
+            <input type="password" formControlName="password" />
+          </div> <br>
+          <input class=" submit button" type="submit" value="Entrar" />
+
+
+        </div>
+      </form>
+
+      <div><br>
+
+        <button mat-fab extended color="primary" (click)="onGoogleLogin()">
+          <mat-icon>login</mat-icon>
+          Entra con tu cuenta de Google
+        </button>
+
+      </div>
+      <br>
+      <div>
+        ¿Todavía no tienes una cuenta?
+        <a routerLink="/registro">
+          Crea tu cuenta
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

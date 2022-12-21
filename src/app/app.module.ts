@@ -23,6 +23,16 @@ import { reducer } from './reducers/record.reducer';
 import { arithmeticReducer } from './reducers/arithmetic.reducer';
 import { reduce } from 'rxjs';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { RegistroComponent } from './components/registro/registro.component';
+import { EntradaComponent } from './components/entrada/entrada.component';
+import { SalidaComponent } from './components/salida/salida.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +41,20 @@ import { reduce } from 'rxjs';
     ActionsComponent,
     FooterComponent,
     NewRecordComponent,
-    RecordListComponent
+    RecordListComponent,
+    RegistroComponent,
+    EntradaComponent,
+    SalidaComponent
   ],
   imports: [
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'app-new-record', component: NewRecordComponent},
       {path: 'app-budget-form', component: BudgetFormComponent},
       {path: '', component: BudgetFormComponent},
+      { path: 'registro', component: RegistroComponent },
+      { path: 'entrada', component: EntradaComponent },
+    
     ]),
     BrowserModule,
     StoreModule.forRoot({records: reducer, arithmetics: arithmeticReducer}),
@@ -50,6 +67,9 @@ import { reduce } from 'rxjs';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
 
   ],
   providers: [],

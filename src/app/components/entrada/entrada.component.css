@@ -1,0 +1,15 @@
+.content {
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(219, 17, 17);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 132, 0);
+}
+
+.body_content{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+}

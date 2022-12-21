@@ -93,6 +93,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "expense_tracker_g2:build:production",
+            "firebaseProject": "expensetracker-f50ea",
+            "firebaseHostingSite": "expensetracker-f50ea"
+          }
         }
       }
     }
