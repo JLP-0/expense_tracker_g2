@@ -3,9 +3,7 @@
       <span>Presupuesto:</span>
       <span class="example-spacer"></span>
       <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> money</mat-icon>
-
       <p>{{budget}}</p>
-
     </mat-toolbar-row>
 
     <mat-toolbar-row>
@@ -19,7 +17,7 @@
       <span>Balance</span>
       <span class="example-spacer"></span>
       <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> local_atm</mat-icon>
-      <p> aqui se mostraria</p>
+      <p>{{this.budget - this.totalExpensesAmount}}</p>
     </mat-toolbar-row>
   </mat-toolbar>
 
