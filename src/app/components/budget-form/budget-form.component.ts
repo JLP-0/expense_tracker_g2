@@ -20,7 +20,7 @@ export class BudgetFormComponent implements OnInit {
 
   panelOpenState = false;
 
-  public addArithmetic(budget: number, total_expenses: number, balance: number){
+  public addArithmetic(budget: any, total_expenses: number, balance: number){
     this.store.dispatch({type: ArithmeticActions.ADD_ARITHMETIC, payload:{budget: budget, total_expenses: total_expenses, balance: balance}});
   }
 
