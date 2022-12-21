@@ -1,11 +1,11 @@
-<div *ngIf="records">
-  <table>
+<div class="content" *ngIf="records">
+  <table  class="table">
     <tr>
       <th>Nombre</th>
       <th>Categoria</th>
       <th>Monto</th>
     </tr>
-    <tr *ngFor="let link of records | async">
+    <tr class="tr_table" *ngFor="let link of records | async; let i = index">
       <td>{{ link.name }}</td>
       <td>{{ link.category }}</td>
       <td>{{ link.amount }}</td>

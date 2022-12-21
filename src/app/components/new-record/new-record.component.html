@@ -1,9 +1,27 @@
-<div>
-  <input type="text" placeholder="Name" #name>
-  <input type="text" placeholder="Category" #category>
-  <input type="number" placeholder="1.000.000" #amount>
-  <button (click)="addRecord(name.value, category.value ,amount.value)">Crear registro</button>
+<div class="center_div">
+  <div class="center_content">
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input type="text" placeholder="Name" id="name" #name matInput placeholder="Ex. Comida, vestimenta..">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Categoria</mat-label>
+        <input type="text" placeholder="Name" id="category" #category matInput placeholder="Ex. Vivienda, transporte...">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Monto</mat-label>
+        <input type="text" placeholder="Name" id="amount" #amount matInput placeholder="1.000.000,">
+      </mat-form-field>
+      <button (click)="addRecord(name.value, category.value ,amount.value)" mat-stroked-button color="primary">Crear registro</button>
+      <div style="padding-top:20px ;">
+      <button style=" background-color: brown; color: aliceblue;" onclick="document.getElementById('name').value = '',document.getElementById('category').value = '', document.getElementById('amount').value = '' " mat-stroked-button color="primary">Limpiar</button>
+    </div>
+    </div>
+  </div>
 </div>
 
-  <app-record-list></app-record-list>
-  
+
+<app-record-list></app-record-list>
