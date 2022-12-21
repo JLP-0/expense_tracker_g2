@@ -51,7 +51,7 @@ import { SalidaComponent } from './components/salida/salida.component'
     RouterModule.forRoot([
       {path: 'app-new-record', component: NewRecordComponent},
       {path: 'app-budget-form', component: BudgetFormComponent},
-      {path: '', component: BudgetFormComponent},
+      {path: '', component: EntradaComponent},
       { path: 'registro', component: RegistroComponent },
       { path: 'entrada', component: EntradaComponent },
     
