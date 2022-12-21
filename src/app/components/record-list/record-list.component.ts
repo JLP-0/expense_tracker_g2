@@ -13,16 +13,14 @@ import * as RecordActions from "../../../app/actions/record.actions"
 })
 export class RecordListComponent implements OnInit {
   public records: Observable<Record[]>
-  
+
   constructor(
     private store: Store<AppState>
   ){
     this.records = store.select("records");
   }
   ngOnInit(): void {
-      
+
   }
-
-
-
+  
 }

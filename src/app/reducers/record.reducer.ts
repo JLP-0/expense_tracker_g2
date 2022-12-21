@@ -10,7 +10,7 @@ const initialState: Record = {
 }
 
 export function reducer(state: Record[] = [initialState], action: Action) {
-  
+
     switch (action.type) {
         case RecordActions.ADD_RECORD:
             return [...state, (action as unknown as Record).payload ];
