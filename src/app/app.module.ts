@@ -40,7 +40,7 @@ import { reduce } from 'rxjs';
       {path: '', component: BudgetFormComponent},
     ]),
     BrowserModule,
-    StoreModule.forRoot({records: reducer, arithmetics: reducer}),
+    StoreModule.forRoot({records: reducer, arithmetics: arithmeticReducer}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
