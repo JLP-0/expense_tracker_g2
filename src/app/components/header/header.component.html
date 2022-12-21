@@ -2,7 +2,7 @@
   <mat-toolbar-row>
 
     <div class="example-button-container">
-      <button routerLink="app-budget-form" mat-fab color="warn" aria-label="Example icon button with a delete icon">
+      <button *ngIf="is_user_logged_in()" routerLink="app-budget-form" mat-fab color="warn" aria-label="Example icon button with a delete icon">
         <mat-icon>home</mat-icon>
       </button>
     </div>
@@ -11,14 +11,14 @@
 
     <span class="example-spacer"></span>
     <div class="example-button-container">
-      <button routerLink="/app-new-record" mat-fab color="warn" aria-label="Add record">
+      <button *ngIf="is_user_logged_in()" routerLink="/app-new-record" mat-fab color="warn" aria-label="Add record">
         <mat-icon>addition</mat-icon>
       </button>
     </div>
 
     
     <div class="example-button-container">
-      <button *ngIf="is_user_logged_in()" routerLink="/entrada" class="item" routerLink="/entrada" mat-fab
+      <button (click)="logout()"   routerLink="/entrada" class="item" routerLink="/entrada" mat-fab
         color="primary" aria-label="Add record">
         <mat-icon>logout</mat-icon>
       </button>

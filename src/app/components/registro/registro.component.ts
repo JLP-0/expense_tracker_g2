@@ -24,19 +24,16 @@ export class RegistroComponent implements OnInit {
     this.userService
       .register(this.formReg.value)
       .then((response) => {
-        // console.log(response);
-        this.router.navigate(['/entrada']);
+        if (response == true){
+          alert("Bienvenido!")
+          this.router.navigate(['/app-budget-form']);
+        }
+        if (response == false){
+          alert("Ha ocurrido un error!")
+          this.router.navigate(['/entrada']);
+        } 
       })
       .catch((error) => console.error(error));
   }
 
-  onGoogleLogin() {
-    this.userService
-      .google_login()
-      .then((response) => {
-        // console.log(response);
-        this.router.navigate(['/perfil']);
-      })
-      .catch((error) => console.error(error));
-  }
 }

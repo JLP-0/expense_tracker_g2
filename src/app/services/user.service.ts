@@ -17,24 +17,24 @@ export class UserService {
   register({ email, password }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredentials) => {
-        // console.log( `Successful registration with credentials: ${JSON.stringify(userCredentials)}` );
+        return true;        
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.log(error)
+        return false;
+      });
   }
 
   login({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password)
-      .then((userCredentials) => {
-        // console.log( `Successful login with credentials: ${JSON.stringify(userCredentials)}` );
+      .then((userCredentials) => {      
+        return true;
       })
-      .catch((error) => {
-        console.error(error);
+      .catch((error) => {               
+        return false;
       });
   }
 
-  google_login() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
-  }
 
   is_user_logged_in() {
     const user = this.auth.currentUser;

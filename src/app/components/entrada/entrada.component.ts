@@ -21,20 +21,19 @@ export class EntradaComponent {
   onSubmit() {
     this.userService
       .login(this.formLogin.value)
-      .then((response) => {
-        // console.log(response);
-        this.router.navigate(['/app-budget-form']);
+      .then((response) => {        
+        console.log(response);
+        if (response == true){
+          alert("Bienvenido!")
+          this.router.navigate(['/app-budget-form']);
+        }
+        if (response == false){
+          alert("Credenciales inválidos")
+          this.router.navigate(['/entrada']);
+        }        
       })
-      .catch((error) => console.error(error));
+      .catch((error) => this.router.navigate(['/entrada']));
   }
 
-  onGoogleLogin() {
-    this.userService
-      .google_login()
-      .then((response) => {
-        // console.log(response);
-        this.router.navigate(['/perfil']);
-      })
-      .catch((error) => console.error(error));
-  }
+
 }

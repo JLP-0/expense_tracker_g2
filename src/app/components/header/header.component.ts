@@ -13,6 +13,10 @@ export class HeaderComponent {
     return this.userService.is_user_logged_in();
   }
 
+  logout(){
+    return this.userService.logout();
+  }
+
   
 
   

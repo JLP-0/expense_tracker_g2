@@ -6,27 +6,23 @@
         <div class="ui stacked segment">
           <div class="field">
             <label class="form-label">Correo electrónico</label><br>
-            <input type="text" formControlName="email" />
+            <input type="text" formControlName="email" required />
           </div><br>
           <div class="field">
             <label class="form-label">Contraseña</label><br>
-            <input type="password" formControlName="password" />
+            <input type="password" formControlName="password" required />
+            <p style="color: green;">La contraseña debe de contener más de 6 carácteres</p>
           </div><br>
           <input class="ui fluid large teal submit button" type="submit" value="Crear" />
-        </div><br><br>
+        </div><br>
       </form>
 
-      <div class="ui message">
-        <button mat-fab extended color="primary" (click)="onGoogleLogin()">
+      <div>
+        ¿Ya tienes una cuenta? <br>
+        <button mat-fab extended color="primary" routerLink="/entrada">
           <mat-icon>login</mat-icon>
-          Entra con tu cuenta de Google
+         Ingresa con tu cuenta
         </button>
-      </div> <br>
-      <div class="ui message">
-        ¿Ya tienes una cuenta?
-        <a class="ui fluid large submit blue button" routerLink="/entrada">
-          Entra a tu cuenta
-        </a>
       </div>
     </div>
   </div>

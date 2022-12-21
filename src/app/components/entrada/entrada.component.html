@@ -15,26 +15,17 @@
             <input type="password" formControlName="password" />
           </div> <br>
           <input class=" submit button" type="submit" value="Entrar" />
-
-
         </div>
       </form>
 
       <div><br>
-
-        <button mat-fab extended color="primary" (click)="onGoogleLogin()">
+        ¿Todavía no tienes una cuenta? <br>
+        <button mat-fab extended color="primary" routerLink="/registro">
           <mat-icon>login</mat-icon>
-          Entra con tu cuenta de Google
+          Crea tu cuenta
         </button>
-
       </div>
       <br>
-      <div>
-        ¿Todavía no tienes una cuenta?
-        <a routerLink="/registro">
-          Crea tu cuenta
-        </a>
-      </div>
     </div>
   </div>
 </div>
